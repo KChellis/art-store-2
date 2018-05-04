@@ -10,6 +10,7 @@ import { ArtService } from '../art.service';
 })
 export class ArtListComponent implements OnInit {
   artList: Art[];
+  userInput: string ='';
   @Output() sendArt = new EventEmitter();
   @Output() editSend = new EventEmitter();
 
@@ -22,10 +23,12 @@ export class ArtListComponent implements OnInit {
     this.sendArt.emit(art);
   }
   addArt() {
-    let art = new Art('', '', [''], null, [''], [''], '');
+    let art = new Art('', '', [''], null, [''], [''], '', ['']);
     this.artList.push(art);
     this.sendArt.emit(art);
     this.editSend.emit(true);
-
+  }
+  searchInput(value:string) {
+    this.userInput = value;
   }
 }

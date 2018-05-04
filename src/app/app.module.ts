@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { ArtListComponent } from './art-list/art-list.component';
 import { ArtDetailComponent } from './art-detail/art-detail.component';
 import { EditArtComponent } from './edit-art/edit-art.component';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { EditArtComponent } from './edit-art/edit-art.component';
     AboutComponent,
     ArtListComponent,
     ArtDetailComponent,
-    EditArtComponent
+    EditArtComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

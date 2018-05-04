@@ -23,6 +23,10 @@
   <button class="btn btn-info" (click)="addStyle()" type="button" name="button">Add Style</button>
   <button class="btn btn-info" (click)="deleteStyle()" type="button" name="button">Delete last style</button>
   <h5>Description:</h5>
-  <input [(ngModel)]="selectedArt.description" placeholder="Enter Description"><br>
+  <input [(ngModel)]="selectedArt.description" placeholder="Enter Description">
+  <h5>Keywords:</h5>
+  <div *ngFor="let keyword of selectedArt.keywords;let index = index;trackBy:trackByIndex">
+    <input name="index" [(ngModel)]="selectedArt.keywords[index]" placeholder="Enter keywords">
+  </div><br>
   <button class="btn btn-info" (click)="finishEdit()" type="button" name="button">Done Editing</button>
 </div>

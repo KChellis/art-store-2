@@ -1,3 +1,8 @@
+<div>
+  <input #newSearch>
+  <button (click)="searchInput(newSearch.value)">Search</button>
+</div>
+<h5>Click to show item details</h5>
 <div *ngFor="let art of artList"  (click)="selectArt(art)">
   <div class="row">
     <div class="col-sm-2">
