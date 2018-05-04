@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Art } from '../models/art.model';
 import { ArtService } from '../art.service';
 import { Router } from '@angular/router';
@@ -13,23 +13,17 @@ export class ArtListComponent implements OnInit {
   artList: Art[];
   userInput: string ='';
   filter: string='';
-  @Output() sendArt = new EventEmitter();
-  @Output() editSend = new EventEmitter();
+  add: boolean = false;
 
   constructor(private artService: ArtService, private router: Router) { }
 
   ngOnInit() {
     this.artList = this.artService.getArt();
   }
-  selectArt(art) {
-    this.sendArt.emit(art);
+  openAdd() {
+    this.add = true;
   }
-  addArt() {
-    let art = new Art('', '', [''], null, [''], [''], '', [''], this.artList.length);
-    this.artList.push(art);
-    this.sendArt.emit(art);
-    this.editSend.emit(true);
-  }
+
   searchInput(value:string) {
     this.userInput = value;
   }

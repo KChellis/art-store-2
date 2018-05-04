@@ -1,0 +1,24 @@
+<div *ngIf="add">
+  <h5>Name:</h5>
+  <input #newName placeholder="Enter name">
+  <h5>Image:</h5>
+  <p>Enter image URLs separated by a comma</p>
+  <input #newImages placeholder="Enter image URLs">
+  <h5>Medium:</h5>
+  <input #newMedium placeholder="Enter Medium">
+  <h5>Price:</h5>
+  <input #newPrice placeholder="Enter Price">
+  <h5>Materials:</h5>
+  <p>Enter materials separated by a comma</p>
+  <input #newMaterials placeholder="Enter materials">
+  <h5>Styles:</h5>
+  <p>Enter styles separated by a comma</p>
+  <input #newStyles placeholder="Enter styles">
+  <h5>Description:</h5>
+  <input #newDescription placeholder="Enter Description">
+  <h5>Keywords:</h5>
+  <p>Enter keywords separated by a comma</p>
+  <input #newKeywords placeholder="Enter keywords">
+  <br>
+  <button class="btn btn-info" (click)="addArt(newName.value, newImages.value, newMedium.value, newPrice.value, newMaterials.value, newStyles.value, newDescription.value, newKeywords.value)" type="button" name="button">Add</button>
+</div>

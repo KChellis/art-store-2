@@ -27,6 +27,12 @@ export class EditArtComponent implements OnInit {
   deleteStyle() {
     this.selectedArt.styles.splice(-1, 1);
   }
+  addImage() {
+    this.selectedArt.images.push('');
+  }
+  deleteImage() {
+    this.selectedArt.images.splice(-1, 1);
+  }
   finishEdit() {
     this.editSend.emit();
   }

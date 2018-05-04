@@ -7,14 +7,8 @@ import { Art } from './models/art.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+title: string = 'Glass Lab PDX'
 
-  selectedArt: Art = null;
-  edit: boolean = false;
 
-  selectArt(art) {
-    this.selectedArt = art;
-  }
-  editArt(edit) {
-    this.edit = edit;
-  }
+
 }

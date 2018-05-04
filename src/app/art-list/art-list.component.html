@@ -9,7 +9,7 @@
   </select>
 </div>
 <h5>Click to show item details</h5>
-<div *ngFor="let art of (artList | search:userInput) | sort:filter"  (click)="selectArt(art)" (click)="goToDetails(art)">
+<div *ngFor="let art of (artList | search:userInput) | sort:filter" (click)="goToDetails(art)">
   <div class="row">
     <div class="col-sm-2">
       <img src="{{art.images[0]}}" alt="Picture of {{art.name}}">
@@ -23,4 +23,6 @@
   </div>
 
 </div>
-<button (click)="addArt()">Add Art</button>
+<button (click)="openAdd()">Add Art</button>
+
+<app-add-art [add]='add' [artList]='artList'></app-add-art>

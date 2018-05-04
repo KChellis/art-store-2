@@ -13,6 +13,7 @@ import { EditArtComponent } from './edit-art/edit-art.component';
 import { SearchPipe } from './search.pipe';
 import { SortPipe } from './sort.pipe';
 import { routing } from './app.routing';
+import { AddArtComponent } from './add-art/add-art.component';
 
 
 @NgModule({
@@ -24,11 +25,12 @@ import { routing } from './app.routing';
     ArtDetailComponent,
     EditArtComponent,
     SearchPipe,
-    SortPipe
+    SortPipe,
+    AddArtComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,,
+    FormsModule,
     HttpModule,
     routing
   ],
