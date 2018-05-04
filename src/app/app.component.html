@@ -2,6 +2,6 @@
   <h1>Glass Lab PDX!</h1>
 
   <app-art-list (sendArt)=selectArt($event)></app-art-list>
-  <app-art-detail [selectedArt]="selectedArt"></app-art-detail>
+  <app-art-detail [selectedArt]="selectedArt" (editSend)=editArt($event)></app-art-detail>
   <app-edit-art [selectedArt]="selectedArt" [edit]="edit" (editSend)=editArt($event)></app-edit-art>
 </div>

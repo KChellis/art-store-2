@@ -1,3 +1,24 @@
-<p>
-  edit-art works!
-</p>
+<div *ngIf="edit">
+  <h4>Edit: {{selectedArt.name}}</h4>
+  <h5>Name:</h5>
+  <input [(ngModel)]="selectedArt.name" placeholder="Enter name">
+  <h5>Medium:</h5>
+  <input [(ngModel)]="selectedArt.type" placeholder="Enter Medium">
+  <h5>Price:</h5>
+  <input [(ngModel)]="selectedArt.price" placeholder="Enter Price">
+  <h5>Materials:</h5>
+  <div *ngFor="let material of selectedArt.materials;let index = index;trackBy:trackByIndex">
+    <input name="index" [(ngModel)]="selectedArt.materials[index]" placeholder="Enter ingredient">
+  </div>
+  <button class="btn btn-info" (click)="addMaterial()" type="button" name="button">Add material</button>
+  <button class="btn btn-info" (click)="deleteMaterial()" type="button" name="button">Delete last material</button>
+  <h5>Styles:</h5>
+  <div *ngFor="let style of selectedArt.styles;let index = index;trackBy:trackByIndex">
+    <input name="index" [(ngModel)]="selectedArt.styles[index]" placeholder="Enter style">
+  </div>
+  <button class="btn btn-info" (click)="addStyle()" type="button" name="button">Add Style</button>
+  <button class="btn btn-info" (click)="deleteStyle()" type="button" name="button">Delete last style</button>
+  <h5>Description:</h5>
+  <input [(ngModel)]="selectedArt.description" placeholder="Enter Description"><br>
+  <button class="btn btn-info" (click)="finishEdit()" type="button" name="button">Done Editing</button>
+</div>

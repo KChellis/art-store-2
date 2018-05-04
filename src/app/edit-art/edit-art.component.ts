@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Art } from '../models/art.model';
 
 @Component({
@@ -9,10 +9,25 @@ import { Art } from '../models/art.model';
 export class EditArtComponent implements OnInit {
   @Input() selectedArt: Art;
   @Input() edit: boolean;
-  
+  @Output() editSend = new EventEmitter()
+
   constructor() { }
 
   ngOnInit() {
   }
-
+  addMaterial() {
+    this.selectedArt.materials.push('');
+  }
+  deleteMaterial() {
+    this.selectedArt.materials.splice(-1, 1);
+  }
+  addStyle() {
+    this.selectedArt.styles.push('');
+  }
+  deleteStyle() {
+    this.selectedArt.styles.splice(-1, 1);
+  }
+  finishEdit() {
+    this.editSend.emit(false);
+  }
 }
