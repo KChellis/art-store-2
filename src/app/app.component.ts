@@ -9,8 +9,12 @@ import { Art } from './models/art.model';
 export class AppComponent {
 
   selectedArt: Art = null;
+  edit: boolean = false;
 
   selectArt(art) {
     this.selectedArt = art;
+  }
+  editArt(edit) {
+    this.edit = edit;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Art } from '../models/art.model';
 
 @Component({
@@ -8,11 +8,14 @@ import { Art } from '../models/art.model';
 })
 export class ArtDetailComponent implements OnInit {
   @Input() selectedArt: Art;
+  @Output() editSend = new EventEmitter()
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.selectedArt);
-  }
 
+  }
+  editArt() {
+    this.editSend.emit(true);
+  }
 }

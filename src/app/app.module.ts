@@ -8,6 +8,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { ArtListComponent } from './art-list/art-list.component';
 import { ArtDetailComponent } from './art-detail/art-detail.component';
+import { EditArtComponent } from './edit-art/edit-art.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ArtDetailComponent } from './art-detail/art-detail.component';
     WelcomeComponent,
     AboutComponent,
     ArtListComponent,
-    ArtDetailComponent
+    ArtDetailComponent,
+    EditArtComponent
   ],
   imports: [
     BrowserModule,
