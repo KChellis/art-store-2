@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Art } from '../models/art.model';
 import { ArtService } from '../art.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-art-list',
@@ -15,7 +16,7 @@ export class ArtListComponent implements OnInit {
   @Output() sendArt = new EventEmitter();
   @Output() editSend = new EventEmitter();
 
-  constructor(private artService: ArtService) { }
+  constructor(private artService: ArtService, private router: Router) { }
 
   ngOnInit() {
     this.artList = this.artService.getArt();
@@ -24,7 +25,7 @@ export class ArtListComponent implements OnInit {
     this.sendArt.emit(art);
   }
   addArt() {
-    let art = new Art('', '', [''], null, [''], [''], '', ['']);
+    let art = new Art('', '', [''], null, [''], [''], '', [''], this.artList.length);
     this.artList.push(art);
     this.sendArt.emit(art);
     this.editSend.emit(true);
@@ -36,4 +37,8 @@ export class ArtListComponent implements OnInit {
   onChange (input) {
     this.filter = input;
   }
+
+  goToDetails(art: Art) {
+     this.router.navigate(['details', art.id]);
+   };
 }

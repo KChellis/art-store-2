@@ -1,3 +1,3 @@
 export class Art {
-  constructor(public name: string, public type: string, public materials: string[], public price: number, public images: string[], public styles: string[], public description: string, public keywords: string[]){}
+  constructor(public name: string, public type: string, public materials: string[], public price: number, public images: string[], public styles: string[], public description: string, public keywords: string[], public id: number){}
 }
