@@ -11,6 +11,8 @@ import { ArtService } from '../art.service';
 export class ArtListComponent implements OnInit {
   artList: Art[];
   @Output() sendArt = new EventEmitter();
+  @Output() editSend = new EventEmitter();
+
   constructor(private artService: ArtService) { }
 
   ngOnInit() {
@@ -18,5 +20,12 @@ export class ArtListComponent implements OnInit {
   }
   selectArt(art) {
     this.sendArt.emit(art);
+  }
+  addArt() {
+    let art = new Art('', '', [''], null, [''], [''], '');
+    this.artList.push(art);
+    this.sendArt.emit(art);
+    this.editSend.emit(true);
+
   }
 }

@@ -9,7 +9,7 @@ import { Art } from '../models/art.model';
 export class EditArtComponent implements OnInit {
   @Input() selectedArt: Art;
   @Input() edit: boolean;
-  @Output() editSend = new EventEmitter()
+  @Output() editSend = new EventEmitter();
 
   constructor() { }
 

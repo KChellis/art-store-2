@@ -1,15 +1,15 @@
-<div *ngFor="let art of artList">
+<div *ngFor="let art of artList"  (click)="selectArt(art)">
   <div class="row">
     <div class="col-sm-2">
-      <img src="{{art.image}}" alt="Picture of {{art.name}}">
+      <img src="{{art.images[0]}}" alt="Picture of {{art.name}}">
     </div>
     <div class="col-sm-6">
-      <h4 (click)="selectArt(art)">{{art.name}}</h4>
+      <h4>{{art.name}}</h4>
     </div>
     <div class="col-sm-2">
       <h5>${{art.price}}</h5>
     </div>
   </div>
 
-
 </div>
+<button (click)="addArt()">Add Art</button>

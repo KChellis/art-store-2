@@ -8,7 +8,7 @@ import { Art } from '../models/art.model';
 })
 export class ArtDetailComponent implements OnInit {
   @Input() selectedArt: Art;
-  @Output() editSend = new EventEmitter()
+  @Output() editSend = new EventEmitter();
 
   constructor() { }
 
