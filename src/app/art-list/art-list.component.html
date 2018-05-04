@@ -4,7 +4,7 @@
       <img src="{{art.image}}" alt="Picture of {{art.name}}">
     </div>
     <div class="col-sm-6">
-      <h4>{{art.name}}</h4>
+      <h4 (click)="selectArt(art)">{{art.name}}</h4>
     </div>
     <div class="col-sm-2">
       <h5>${{art.price}}</h5>

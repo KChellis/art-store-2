@@ -1,8 +1,12 @@
-<div ngIf="selectedArt" class="card">
-  <h2>{{selectedArt.name}}</h2>
+<div *ngIf="selectedArt" class="card">
+  <h3>{{selectedArt.name}}</h3>
   <img src="{{selectedArt.image}}" alt="picture of {{name}}">
+  <h5>Medium:</h5>
+  <p>{{selectedArt.type}}</p>
   <h5>Materials:</h5>
   <ul>
     <li *ngFor="let material of selectedArt.materials">{{material}}</li>
   </ul>
+  <h5>Description:</h5>
+  <p>{{selectedArt.description}}</p>
 </div>

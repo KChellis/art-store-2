@@ -15,7 +15,6 @@ export class ArtListComponent implements OnInit {
 
   ngOnInit() {
     this.artList = this.artService.getArt();
-    console.log(this.artList)
   }
   selectArt(art) {
     this.sendArt.emit(art);
