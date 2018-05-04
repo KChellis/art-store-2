@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Keg } from '../models/art.model';
 
 @Component({
   selector: 'app-art-list',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./art-list.component.css']
 })
 export class ArtListComponent implements OnInit {
-
+  @Input() childKegList: Keg[];
   constructor() { }
 
   ngOnInit() {
