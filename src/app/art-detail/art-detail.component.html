@@ -1,3 +1,8 @@
-<p>
-  art-detail works!
-</p>
+<div ngIf="selectedArt" class="card">
+  <h2>{{selectedArt.name}}</h2>
+  <img src="{{selectedArt.image}}" alt="picture of {{name}}">
+  <h5>Materials:</h5>
+  <ul>
+    <li *ngFor="let material of selectedArt.materials">{{material}}</li>
+  </ul>
+</div>

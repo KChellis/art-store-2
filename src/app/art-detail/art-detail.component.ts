@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Art } from '../models/art.model';
 
 @Component({
   selector: 'app-art-detail',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./art-detail.component.css']
 })
 export class ArtDetailComponent implements OnInit {
+  @Input() selectedArt: Art;
 
   constructor() { }
 
