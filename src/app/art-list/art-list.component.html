@@ -1,9 +1,15 @@
 <div>
   <input #newSearch>
   <button (click)="searchInput(newSearch.value)">Search</button>
+  <select (change)="onChange($event.target.value)">
+    <option value="" disabled selected>Sort by</option>
+    <option value="price">Price</option>
+    <option value="name">Name</option>
+    <option value="type">Medium</option>
+  </select>
 </div>
 <h5>Click to show item details</h5>
-<div *ngFor="let art of artList"  (click)="selectArt(art)">
+<div *ngFor="let art of artList | sort:filter"  (click)="selectArt(art)">
   <div class="row">
     <div class="col-sm-2">
       <img src="{{art.images[0]}}" alt="Picture of {{art.name}}">

@@ -11,6 +11,7 @@ import { ArtService } from '../art.service';
 export class ArtListComponent implements OnInit {
   artList: Art[];
   userInput: string ='';
+  filter: string="";
   @Output() sendArt = new EventEmitter();
   @Output() editSend = new EventEmitter();
 
@@ -30,5 +31,9 @@ export class ArtListComponent implements OnInit {
   }
   searchInput(value:string) {
     this.userInput = value;
+  }
+  
+  onChange (input) {
+    this.filter = input;
   }
 }

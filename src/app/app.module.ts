@@ -10,6 +10,7 @@ import { ArtListComponent } from './art-list/art-list.component';
 import { ArtDetailComponent } from './art-detail/art-detail.component';
 import { EditArtComponent } from './edit-art/edit-art.component';
 import { SearchPipe } from './search.pipe';
+import { SortPipe } from './sort.pipe';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SearchPipe } from './search.pipe';
     ArtListComponent,
     ArtDetailComponent,
     EditArtComponent,
-    SearchPipe
+    SearchPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,
