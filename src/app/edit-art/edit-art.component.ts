@@ -28,6 +28,6 @@ export class EditArtComponent implements OnInit {
     this.selectedArt.styles.splice(-1, 1);
   }
   finishEdit() {
-    this.editSend.emit(false);
+    this.editSend.emit();
   }
 }

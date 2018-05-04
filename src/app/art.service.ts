@@ -11,4 +11,12 @@ export class ArtService {
     return ARTS;
   }
 
+  selectArt(artId: number){
+    for (var i = 0; i <= ARTS.length - 1; i++) {
+      if (ARTS[i].id === artId) {
+        return ARTS[i];
+      }
+    }
+  }
+
 }
