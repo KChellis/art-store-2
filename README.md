@@ -2,13 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
-#### _A clone of etsy_
+#### _An analog of etsy_
 
 #### By _**Kristen Chellis May 4, 2018**_
 
 ## Description
 
-_This page allows an artist to show and sell their work_
+_This page allows an artist to show and sell their work. It is meant to mimic the artists page for etsy_
+
+## Planning
+*_welcome page_
+*_art pieces contain at least name, medium, materials, description, price, images_
+*_artist can view list of orders_
+*_artist can view list of art pieces for sale_
+*_artist can edit art pieces in list_
+*_artist can add new art pieces_
+*_artist can search listings by keyword_
+*_artist can sort listings by price, name, and medium_
+*_orders will contain at least name of orderer, pieces ordered, total cost, address, date_
+*_artist will be able to view list of orders_
+*-artist will be able to mark orders as sent_
+*_artist will be able to sort orders by date and sent status_
+*_If I have time I'll add user interface as well_
+
 
 
 ## Setup/Installation Requirements
