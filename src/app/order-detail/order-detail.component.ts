@@ -21,7 +21,7 @@ export class OrderDetailComponent implements OnInit {
       this.orderId = parseInt(urlParameters['id']);
     });
 
-    this.order = this.orderService.getOrder(orderId);
+    this.order = this.orderService.getOrder(this.orderId);
   }
 
   markNew() {
