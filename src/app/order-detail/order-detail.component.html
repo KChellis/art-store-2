@@ -1,0 +1,16 @@
+<h2>Order Details</h2>
+<h3>{{order.name[1]}} {{order.name[0]}} {{order.date}}</h3>
+<h4>Email: </h4>
+<p> {{order.email}}</p>
+<h4>Items ordered:</h4>
+<ul>
+  <li *ngFor="let item of order.items">{{item}} {{item.price}}</li>
+</ul>
+<p>Total: {{order.total}}</p>
+<h4>Address:</h4>
+<p>{{order.address[0]}}</p>
+<p *ngIf="order.address[4]">{{order.address[4]}}</p>
+<p>{{order.address[1]}}, {{order.address[2]}} {{order.address[3]}}</p>
+<button (click)="markNew()">Mark As New</button>
+<button (click)="markSend()">Sent</button>
+<button (click)="deleteOrder()">Delete</button>

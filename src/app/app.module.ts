@@ -15,6 +15,7 @@ import { SortPipe } from './sort.pipe';
 import { routing } from './app.routing';
 import { AddArtComponent } from './add-art/add-art.component';
 import { OrderListComponent } from './order-list/order-list.component';
+import { OrderDetailComponent } from './order-detail/order-detail.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { OrderListComponent } from './order-list/order-list.component';
     SearchPipe,
     SortPipe,
     AddArtComponent,
-    OrderListComponent
+    OrderListComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
