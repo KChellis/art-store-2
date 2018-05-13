@@ -16,7 +16,16 @@ import { routing } from './app.routing';
 import { AddArtComponent } from './add-art/add-art.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
 
 @NgModule({
   declarations: [
@@ -36,7 +45,9 @@ import { OrderDetailComponent } from './order-detail/order-detail.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../models/order.model';
-// import { Router } from './routing';
-// import { OrderService } from '../order.service';
+import { Router } from '@angular/router';
+import { OrderService } from '../order.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Order } from '../models/order.model';
   styleUrls: ['./order-list.component.css']
 })
 export class OrderListComponent implements OnInit {
-  orderList: Order[];
+  orderList:  FirebaseListObservable<any[]>;
   constructor(private orderService: OrderService, private router: Router) { }
 
   ngOnInit() {
@@ -19,8 +20,7 @@ export class OrderListComponent implements OnInit {
   }
 
   goToDetails(order) {
-    let orderId = this.orderService.getOrderById(order);
-    this.router.navigate('orders/' + orderId);
+    this.router.navigate('orders/' + order.$key);
   }
   onChange(filter) {
   }

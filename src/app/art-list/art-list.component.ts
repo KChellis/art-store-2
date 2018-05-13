@@ -2,6 +2,8 @@ import { Component, OnInit} from '@angular/core';
 import { Art } from '../models/art.model';
 import { ArtService } from '../art.service';
 import { Router } from '@angular/router';
+import { FirebaseListObservable } from 'angularfire2/database';
+
 
 @Component({
   selector: 'app-art-list',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
   providers: [ArtService]
 })
 export class ArtListComponent implements OnInit {
-  artList: Art[];
+  artList:  FirebaseListObservable<any[]>;
   userInput: string ='';
   filter: string='';
   add: boolean = false;
@@ -32,7 +34,7 @@ export class ArtListComponent implements OnInit {
     this.filter = input;
   }
 
-  goToDetails(art: Art) {
-     this.router.navigate(['details', art.id]);
+  goToDetails(art) {
+     this.router.navigate(['details', art.$key]);
    };
 }

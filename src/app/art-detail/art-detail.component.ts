@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Art } from '../models/art.model';
 import { ArtService } from '../art.service';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-art-detail',
@@ -11,15 +12,15 @@ import { ArtService } from '../art.service';
   providers: [ArtService]
 })
 export class ArtDetailComponent implements OnInit {
-  selectedArt: Art = null;
+  selectedArt;
   edit: boolean = false;
-  artId: number = null;
+  artId: string;
 
   constructor(private route: ActivatedRoute, private location: Location, private artService: ArtService) { }
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.artId = parseInt(urlParameters['id']);
+      this.artId = urlParameters['id'];
     });
     this.selectedArt = this.artService.selectArt(this.artId);
   }

@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Art } from './models/art.model';
 import { ARTS } from './mock-art';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class ArtService {
-
-  constructor() { }
-
-  getArt() {
-    return ARTS;
+  artList: FirebaseListObservable<any[]>;
+  constructor(private database: AngularFireDatabase) {
+    this.artList = database.list('art');
   }
 
-  selectArt(artId: number){
-    for (var i = 0; i <= ARTS.length - 1; i++) {
-      if (ARTS[i].id === artId) {
-        return ARTS[i];
-      }
-    }
+  getArt() {
+    return this.artList;
+  }
+
+  selectArt(artId: string){
+    return this.database.object('art/' + artId);
   }
 
 }

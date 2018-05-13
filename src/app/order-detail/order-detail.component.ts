@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Order } from '../models/order.model';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import { OrderService} from '../order.service'
+import { OrderService} from '../order.service';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-order-detail',
@@ -10,15 +11,15 @@ import { OrderService} from '../order.service'
   styleUrls: ['./order-detail.component.css']
 })
 export class OrderDetailComponent implements OnInit {
-  order: Order;
-  orderId;
+  order;
+  orderId: string;
 
   constructor(private orderService: OrderService, private route: ActivatedRoute, private location: Location,) { }
 
   ngOnInit() {
     this.order.new = false;
     this.route.params.forEach((urlParameters) => {
-      this.orderId = parseInt(urlParameters['id']);
+      this.orderId = urlParameters['id'];
     });
 
     this.order = this.orderService.getOrder(this.orderId);
