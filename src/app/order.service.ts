@@ -18,4 +18,12 @@ export class OrderService {
     return this.database.object('orders/' + orderId);
   }
 
+  addOrder(order) {
+    this.orderList.push(order);
+  }
+
+  deleteOrder(order) {
+    let entryInFirebase = this.selectOrder(order.$key)
+  }
+
 }
