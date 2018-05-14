@@ -1,0 +1,61 @@
+{ "art": [{
+    "name": "Christmas tree ornaments",
+    "type": "Fused Glass",
+    "materials": ["Bullseye Glass", "Silver finding"],
+    "price": 7.00,
+    "images": ["https://github.com/KChellis/art-store-2/blob/master/src/assets/trees1.png", "https://github.com/KChellis/art-store-2/blob/master/src/assets/trees2.png"],
+    "styles": ["Regular Striped", "Dot Striped", "Small Dots", "Large Dots"],
+    "description": "Fused Glass Christmas Tree Ornaments in a variety of patterns. All pieces are handmade and no two pieces are exactly alike.",
+    "keywords": ["Bullseye", "christmas", "glass", "xmas", "fused", "tree", "handmade", "ornaments"]
+  }, {
+    "name": "Dichroic Glass Necklaces and Earrings",
+    "type": "Fused Glass",
+    "materials": ["Dichroic glass", "Silver Findings", "Black Satin Cord"],
+    "price": 40.00,
+    "images": ["https://github.com/KChellis/art-store-2/blob/master/src/assets/necklaces.png", "https://github.com/KChellis/art-store-2/blob/master/src/assets/labyrinth.png", "https://github.com/KChellis/art-store-2/blob/master/src/assets/plummage.png", "https://github.com/KChellis/art-store-2/blob/master/src/assets/circiut.png", "https://github.com/KChellis/art-store-2/blob/master/src/assets/twostyle.png"],
+    "styles": ["Plumage", "Clockworks", "Circuits", "String Theory", "Labyrinth"],
+    "description": "Necklaces made with handcut dichroic glass. No two pieces are exactly alike",
+    "keywords": ["dichroic", "necklace", "glass", "silver", "fused", "handmade"]
+  }, {
+    "name": "Sports Logo lampshade",
+    "type": "Fused and Stained Glass",
+    "materials": ["Bullseye glass", "solder"],
+    "price": 200.00,
+    "images": ["https://github.com/KChellis/art-store-2/blob/master/src/assets/blazers.png", "https://github.com/KChellis/art-store-2/blob/master/src/assets/blazers2.png", "https://github.com/KChellis/art-store-2/blob/master/src/assets/colts.png"],
+    "styles": ["Blazers", "Colts", "Packers", "Other"],
+    "description": "Custom lamp shades made with any design you desire. You choose the logo and background color you want. A more difficult logo may cost more. *Does not include lamp.",
+    "keywords": ["bullseye", "lampshade", "glass", "silver", "fused", "handmade", "sports", "logo"]
+  }, {
+    "name": "Bmo glass window in frame",
+    "type": "Fused and Stained Glass",
+    "materials": ["stained glass", "solder", "wood frame"],
+    "price": 60.00,
+    "images": ["https://github.com/KChellis/art-store-2/blob/master/src/assets/bmo.png"],
+    "styles": ["BMo"],
+    "description": "A stained a fused glass depiction of BMo from Adventure Time",
+    "keywords": ["Bmo", "adventure time", "glass", "framed", "fused", "handmade"]
+  }, {
+    "name": "Dragonfly Suncatcher",
+    "type": "Fused and Stained Glass",
+    "materials": ["stained glass", "solder"],
+    "price": 30.00,
+    "images": ["https://github.com/KChellis/art-store-2/blob/master/src/assets/dragonfly.png"],
+    "styles": ["DragonFly"],
+    "description": "This beautiful dragonfly suncatcher would look great in any window!",
+    "keywords": ["suncatcher", "glass", "dragonfly", "handmade"]
+
+  }],
+"orders": [{
+    "new": true,
+    "sent": false,
+    "name": ["", ""],
+    "address": ["", "", "", ""],
+    "items": [""],
+    "date": "",
+    "total": 0,
+    "email": "peanutster@gmail.com",
+    "notes": ""
+
+    }]
+
+}
