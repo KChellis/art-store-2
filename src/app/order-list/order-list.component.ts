@@ -8,7 +8,8 @@ import { FirebaseListObservable } from 'angularfire2/database';
 @Component({
   selector: 'app-order-list',
   templateUrl: './order-list.component.html',
-  styleUrls: ['./order-list.component.css']
+  styleUrls: ['./order-list.component.css'],
+  providers: [OrderService]
 })
 export class OrderListComponent implements OnInit {
   orderList:  FirebaseListObservable<any[]>;
@@ -19,9 +20,9 @@ export class OrderListComponent implements OnInit {
     this.orderList = this.orderService.getOrders();
   }
 
-  // goToDetails(order) {
-  //   this.router.navigate('orders/' + order.$key);
-  // }
+  goToDetails(order) {
+     this.router.navigate(['orders', order.$key]);
+   }
   onChange(filter) {
   }
 

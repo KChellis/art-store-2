@@ -8,26 +8,27 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
 @Component({
   selector: 'app-order-detail',
   templateUrl: './order-detail.component.html',
-  styleUrls: ['./order-detail.component.css']
+  styleUrls: ['./order-detail.component.css'],
+  providers: [OrderService]
 })
 export class OrderDetailComponent implements OnInit {
   order;
   orderId: string;
 
-  constructor(private orderService: OrderService, private route: ActivatedRoute, private location: Location,) { }
+  constructor(private orderService: OrderService, private router: ActivatedRoute, private location: Location,) { }
 
   ngOnInit() {
     this.order.new = false;
-    this.route.params.forEach((urlParameters) => {
+    this.router.params.forEach((urlParameters) => {
       this.orderId = urlParameters['id'];
     });
 
-    this.order = this.orderService.getOrder(this.orderId);
+    this.order = this.orderService.selectOrder(this.orderId);
   }
 
   markNew() {
     this.order.new = true;
-    this.router.navigate('orders');
+    this.orderService.updateOrder(this.order)
   }
 
   markSend() {
