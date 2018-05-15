@@ -19,9 +19,9 @@ export class OrderListComponent implements OnInit {
     this.orderList = this.orderService.getOrders();
   }
 
-  goToDetails(order) {
-    this.router.navigate('orders/' + order.$key);
-  }
+  // goToDetails(order) {
+  //   this.router.navigate('orders/' + order.$key);
+  // }
   onChange(filter) {
   }
 

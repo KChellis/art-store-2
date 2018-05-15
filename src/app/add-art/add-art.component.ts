@@ -1,16 +1,18 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Art } from '../models/art.model';
 import { Router } from '@angular/router';
+import { ArtService } from '../art.service';
 
 @Component({
   selector: 'app-add-art',
   templateUrl: './add-art.component.html',
-  styleUrls: ['./add-art.component.css']
+  styleUrls: ['./add-art.component.css'],
+  providers: [ArtService]
 })
 export class AddArtComponent implements OnInit {
   @Input() add: boolean;
   @Input() artList: Art[];
-  constructor(private router: Router) { }
+  constructor(private router: Router, private artService: ArtService) { }
 
   ngOnInit() {
   }
@@ -20,9 +22,8 @@ export class AddArtComponent implements OnInit {
     let materials = newMaterials.split(',');
     let styles = newStyles.split(',');
     let keywords = newKeywords.split(',');
-    let art = new Art(newName, newMedium, materials, newPrice, images, styles, newDescription, keywords, this.artList.length+1);
-    this.artList.push(art);
+    let art = new Art(newName, newMedium, materials, newPrice, images, styles, newDescription, keywords);
+    this.artService.addArt(art);
     this.add = false;
-    this.router.navigate(['details', art.id]);
   }
 }

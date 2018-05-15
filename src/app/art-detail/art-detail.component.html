@@ -1,17 +1,17 @@
 <div *ngIf="selectedArt" class="card">
-  <h3>{{selectedArt.name}}</h3>
+  <h3>{{selectedArt?.name}}</h3>
 
-  <img *ngFor="let image of selectedArt.images" src="{{image}}" alt="picture of {{name}}">
+  <img *ngFor="let image of selectedArt?.images" src="{{image}}" alt="picture of {{selectedArt?.name}}">
   <h5>Medium:</h5>
-  <p>{{selectedArt.type}}</p>
+  <p>{{selectedArt?.type}}</p>
   <h5>Materials:</h5>
   <ul>
-    <li *ngFor="let material of selectedArt.materials">{{material}}</li>
+    <li *ngFor="let material of selectedArt?.materials">{{material}}</li>
   </ul>
   <h5>Description:</h5>
-  <p>{{selectedArt.description}}</p>
+  <p>{{selectedArt?.description}}</p>
   <h5>Keywords:</h5>
-  <p><span *ngFor="let keyword of selectedArt.keywords">{{keyword}} </span></p>
+  <p><span *ngFor="let keyword of selectedArt?.keywords">{{keyword}} </span></p>
   <button (click)="editArt()">Edit</button>
 </div>
-<app-edit-art [edit]="edit" (editSend)=editArt($event)></app-edit-art>
+<app-edit-art [selectedArt]="selectedArt" [edit]="edit" (editSend)=editArt($event)></app-edit-art>

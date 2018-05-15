@@ -29,6 +29,8 @@
   <h5>Keywords:</h5>
   <div *ngFor="let keyword of selectedArt.keywords;let index = index;trackBy:trackByIndex">
     <input name="index" [(ngModel)]="selectedArt.keywords[index]" placeholder="Enter keywords">
-  </div><br>
-  <button class="btn btn-info" (click)="finishEdit()" type="button" name="button">Done Editing</button>
+  </div>
+  <button class="btn btn-info" (click)="addKeyword()" type="button" name="button">Add Keyword</button>
+  <button class="btn btn-info" (click)="deleteKeyword()" type="button" name="button">Delete last keyword</button><br>
+  <button class="btn btn-info" (click)="finishEdit(selectedArt)" type="button" name="button">Done Editing</button>
 </div>

@@ -16,13 +16,15 @@ export class ArtDetailComponent implements OnInit {
   edit: boolean = false;
   artId: string;
 
-  constructor(private route: ActivatedRoute, private location: Location, private artService: ArtService) { }
+  constructor(private router: ActivatedRoute, private location: Location, private artService: ArtService) { }
 
   ngOnInit() {
-    this.route.params.forEach((urlParameters) => {
+    this.router.params.forEach((urlParameters) => {
       this.artId = urlParameters['id'];
     });
-    this.selectedArt = this.artService.selectArt(this.artId);
+    this.artService.selectArt(this.artId).subscribe(dataLastEmittedFromObserver => {
+     this.selectedArt = dataLastEmittedFromObserver;
+   }
   }
   editArt() {
     if(this.edit === true){

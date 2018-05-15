@@ -18,4 +18,17 @@ export class ArtService {
     return this.database.object('art/' + artId);
   }
 
+  updateArt(art){
+    var entryInFirebase = this.selectArt(art.$key);
+    entryInFirebase.update(art);
+  }
+
+  addArt(art) {
+    this.artList.push(art);
+  }
+
+  deleteArt(art) {
+    let entryInFirebase = this.selectArt(art.$key)
+  }
+
 }

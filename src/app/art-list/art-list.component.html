@@ -9,10 +9,10 @@
   </select>
 </div>
 <h5>Click to show item details</h5>
-<div *ngFor="let art of (artList | search:userInput) | sort:filter" (click)="goToDetails(art)">
+<div *ngFor="let art of artList | async" (click)="goToDetails(art)">
   <div class="row">
     <div class="col-sm-2">
-      <img src="{{art.images[0]}}" alt="Picture of {{art.name}}">
+      <img src="art.images[0]" alt="Picture of {{art.name}}">
     </div>
     <div class="col-sm-6">
       <h4>{{art.name}}</h4>

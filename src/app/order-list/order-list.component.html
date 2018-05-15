@@ -1,14 +1,13 @@
-<select (change)="onChange($event..value)">
-  <option value="" diaabled>Sort By</option>
+<select (change)="onChange($event.target.value)">
+  <option value="" disabled>Sort By</option>
   <option value="date">Date</option>
   <option value="sent">Sent</option>
   <option value="total">Total</option>
   <option value="state">State</option>
 </select>
 
-</select>
 <h2>Orders:</h2>
-<div *ngFor="let order of orderList |">
+<div *ngFor="let order of orderList | async">
   <h4 (click)="goToDetails(order)"><span *ngIf="order.new"><strong>NEW!</strong></span> {{order.name[0]}}, {{order.name[1]}} <span *ngIf="order.sent">-- Completed</span></h4>
   <p>{{order.items.length}} items, {{order.total}}, {{order.address[2]}}</p>
 </div>
