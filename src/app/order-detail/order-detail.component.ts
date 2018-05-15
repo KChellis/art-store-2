@@ -12,31 +12,34 @@ import { FirebaseObjectObservable } from 'angularfire2/database';
   providers: [OrderService]
 })
 export class OrderDetailComponent implements OnInit {
-  order;
+  selectedOrder;
   orderId: string;
 
   constructor(private orderService: OrderService, private router: ActivatedRoute, private location: Location,) { }
 
   ngOnInit() {
-    this.order.new = false;
     this.router.params.forEach((urlParameters) => {
       this.orderId = urlParameters['id'];
     });
-
-    this.order = this.orderService.selectOrder(this.orderId);
+    this.orderService.selectOrder(this.orderId).subscribe(dataLastEmitted => {
+     this.selectedOrder = dataLastEmitted;
+   })
+   this.selectedOrder.new = false;
+   this.orderService.updateOrder(this.selectedOrder);
   }
 
   markNew() {
-    this.order.new = true;
-    this.orderService.updateOrder(this.order)
+    this.selectedOrder.new = true;
+    this.orderService.updateOrder(this.selectedOrder);
   }
 
   markSend() {
-    this.order.sent = true;
+    this.selectedOrder.sent = true;
+    this.orderService.updateOrder(this.selectedOrder);
   }
 
   deleteOrder() {
-    this.orderService.deleteOrder(this.order);
+    this.orderService.deleteOrder(this.selectedOrder);
   }
 
 }

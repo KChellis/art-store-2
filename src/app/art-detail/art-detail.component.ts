@@ -24,8 +24,9 @@ export class ArtDetailComponent implements OnInit {
     });
     this.artService.selectArt(this.artId).subscribe(dataLastEmittedFromObserver => {
      this.selectedArt = dataLastEmittedFromObserver;
-   }
+   })
  }
+
   editArt() {
     if(this.edit === true){
       this.edit = false;
