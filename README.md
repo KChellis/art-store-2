@@ -34,8 +34,18 @@ _This page allows an artist to show and sell their work. It is meant to mimic th
 
 * _Clone this repository to your computer_
 * _Run "npm install" in CLI_
-* _Run "ng build" in CLI_
-* _Open index.html in browser_
+* _make api-keys.ts in app folder_
+* _enter the following code in the api-keys file with your own information:
+export var masterFirebaseConfig = {
+    apiKey: "xxxx",
+    authDomain: "xxxx.firebaseapp.com",
+    databaseURL: "https://xxxx.firebaseio.com",
+    storageBucket: "xxxx.appspot.com",
+    messagingSenderId: "xxxx"
+  };
+_
+* _import the sample-objects.json to the database_
+
 
 
 ## Development server
