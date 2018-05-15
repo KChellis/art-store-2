@@ -4,7 +4,7 @@
 <p> {{selectedOrder?.email}} </p>
 <h4>Items ordered:</h4>
 <ul>
-  <li *ngFor="let item of selectedOrder?.items">{{item}} ${{item.price}}</li>
+  <li *ngFor="let item of selectedOrder?.items">{{item}}</li>
 </ul>
 <p>Total: ${{selectedOrder?.total}}</p>
 <h4>Address:</h4>

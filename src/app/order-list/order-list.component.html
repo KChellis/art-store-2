@@ -7,7 +7,7 @@
 </select> -->
 
 <h2>Orders:</h2>
-<div *ngFor="let order of orderList | async">
+<div *ngFor="let order of orderList">
   <h4 (click)="goToDetails(order)"><span *ngIf="order.new"><strong>NEW!</strong></span> {{order.name[0]}}, {{order.name[1]}} <span *ngIf="order.sent">-- Completed</span></h4>
   <p>{{order.items.length}} items, Total: ${{order.total}}, {{order.address[1]}}</p>
 </div>

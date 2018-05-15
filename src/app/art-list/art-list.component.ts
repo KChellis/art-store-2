@@ -12,7 +12,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [ArtService]
 })
 export class ArtListComponent implements OnInit {
-  artList:  FirebaseListObservable<any[]>;
+  artList;
   userInput: string ='';
   filter: string='';
   add: boolean = false;
@@ -20,7 +20,10 @@ export class ArtListComponent implements OnInit {
   constructor(private artService: ArtService, private router: Router) { }
 
   ngOnInit() {
-    this.artList = this.artService.getArt();
+    this.artService.getArt().subscribe(dataLastEmitted => {
+     this.artList = dataLastEmitted;
+   })
+    // this.artList = this.artService.getArt();
   }
   openAdd() {
     this.add = true;

@@ -12,12 +12,14 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [OrderService]
 })
 export class OrderListComponent implements OnInit {
-  orderList:  FirebaseListObservable<any[]>;
+  orderList;
   constructor(private orderService: OrderService, private router: Router) { }
 
   ngOnInit() {
-
-    this.orderList = this.orderService.getOrders();
+    this.orderService.getOrders().subscribe(dataLastEmitted => {
+     this.orderList = dataLastEmitted;
+   })
+    // this.orderList = this.orderService.getOrders();
   }
 
   goToDetails(order) {

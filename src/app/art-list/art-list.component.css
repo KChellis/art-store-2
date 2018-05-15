@@ -2,3 +2,6 @@ img {
   height: 50px;
   width: 50px;
 }
+.row {
+  margin: 3px;
+}
