@@ -11,6 +11,6 @@
 <p>{{selectedOrder?.address[3]}}</p>
 <p *ngIf="selectedOrder?.address[4]">{{selectedOrder?.address[4]}}</p>
 <p>{{selectedOrder?.address[0]}}, {{selectedOrder?.address[1]}} {{selectedOrder?.address[2]}}</p>
-<button (click)="markNew()">Mark As New</button>
-<button (click)="markSend()">Sent</button>
-<button (click)="deleteOrder()">Delete</button>
+<button class="btn btn-info" (click)="markNew()">Mark As New</button>
+<button class="btn btn-info" (click)="markSend()">Completed</button>
+<button class="btn btn-info" (click)="deleteOrder()">Delete</button>

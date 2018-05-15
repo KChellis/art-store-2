@@ -23,6 +23,9 @@ _This page allows an artist to show and sell their work. It is meant to mimic th
 *_artist will be able to view list of orders_
 *-artist will be able to mark orders as sent_
 *_artist will be able to sort orders by date and sent status_
+
+*_can enlarge picture in details by clicking it_
+*_orders more than a week old will be displayed in red_
 *_If I have time I'll add user interface as well_
 
 

@@ -12,6 +12,6 @@
   <p>{{selectedArt?.description}}</p>
   <h5>Keywords:</h5>
   <p><span *ngFor="let keyword of selectedArt?.keywords">{{keyword}} </span></p>
-  <button (click)="editArt()">Edit</button>
+  <button class="btn btn-info" (click)="editArt()">Edit</button>
 </div>
 <app-edit-art [selectedArt]="selectedArt" [edit]="edit" (editSend)=editArt($event)></app-edit-art>
